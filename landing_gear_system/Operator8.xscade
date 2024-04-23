@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Operator kind="node" name="Doors_Monitoring">
+			<inputs>
+				<Variable name="door_closed_front_V">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/58ea/3D7E/5D70/65f791df2b76" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Door closed front sensor.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="door_closed_left_V">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/58fa/3D7E/5D70/65f791e5769e" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Door closed left sensor.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="door_closed_right_V">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/590a/3D7E/5D70/65f791eb1068" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Door closed right sensor.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="door_open_front_V">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/5952/3D7E/5D70/65f7953e483d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Door open front sensor.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="door_open_left_V">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/5967/3D7E/5D70/65f7956723a7" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Door open left sensor.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="door_open_right_V">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/597c/3D7E/5D70/65f79588e6a" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Door open right sensor.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="open_EV">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/591a/3D7E/5D70/65f791ee17a5" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Open EV command.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+				<Variable name="close_EV">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/5991/3D7E/5D70/65f795cf2df0" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Close EV command.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="anomaly_doors">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<default>
+						<ConstValue value="false"/>
+					</default>
+					<pragmas>
+						<ed:Variable oid="!ed/59e8/3D7E/5D70/65f79bd52acd" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Output to be used in error detection.</comment>
+						</ed:Variable>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<locals>
+				<Variable name="_L1">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/58d9/3D7E/5D70/65f791024ce"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L3">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/58ec/3D7E/5D70/65f791dfc34"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L4">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/58fc/3D7E/5D70/65f791e57ad0"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L5">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/590c/3D7E/5D70/65f791eb6235"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L6">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/591c/3D7E/5D70/65f791ee38e4"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L7">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/5954/3D7E/5D70/65f7953e2adf"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L8">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/5969/3D7E/5D70/65f79567c87"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L9">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/597e/3D7E/5D70/65f7958815f1"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L10">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/5993/3D7E/5D70/65f795cf2c92"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L11">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int8"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/59a6/3D7E/5D70/65f7962d2510"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L13">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/59bd/3D7E/5D70/65f796cb6d1f"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L14">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/59c3/3D7E/5D70/65f797744f3d"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L15">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/59c9/3D7E/5D70/65f7982c5864"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L17">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/59dd/3D7E/5D70/65f79b7993e"/>
+					</pragmas>
+				</Variable>
+			</locals>
+			<data>
+				<!-- _L1 = All_Doors_false(_L3, _L4, _L5, _L6, _L11); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L1"/>
+					</lefts>
+					<right>
+						<!-- All_Doors_false(_L3, _L4, _L5, _L6, _L11) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="All_Doors_false"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L3"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L4"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L5"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L6"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L11"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/58d8/3D7E/5D70/65f7910243ba"/>
+					</pragmas>
+				</Equation>
+				<!-- _L3 = door_closed_front_V; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L3"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="door_closed_front_V"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/58eb/3D7E/5D70/65f791df235a" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Sensor of door closed.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L4 = door_closed_left_V; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L4"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="door_closed_left_V"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/58fb/3D7E/5D70/65f791e525ba" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Sensor of door closed.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L5 = door_closed_right_V; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L5"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="door_closed_right_V"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/590b/3D7E/5D70/65f791eb7405" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Sensor of door closed.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L6 = open_EV; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L6"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="open_EV"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/591b/3D7E/5D70/65f791ee197" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Command to open doors.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L7 = door_open_front_V; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L7"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="door_open_front_V"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/5953/3D7E/5D70/65f7953e4b7" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Sensor of door opened.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L8 = door_open_left_V; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L8"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="door_open_left_V"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/5968/3D7E/5D70/65f795677693" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Sensor of door opened.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L9 = door_open_right_V; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L9"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="door_open_right_V"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/597d/3D7E/5D70/65f7958863aa" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Sensor of door opened.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L10 = close_EV; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L10"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="close_EV"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/5992/3D7E/5D70/65f795cf6dca" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Command to close doors.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L11 = 70; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L11"/>
+					</lefts>
+					<right>
+						<ConstValue value="70"/>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/59a5/3D7E/5D70/65f7962d171c" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+							<comment>Time to trigger an alarm in the defined tic unity.</comment>
+						</ed:Equation>
+					</pragmas>
+				</Equation>
+				<!-- _L13 = All_Doors_true(_L3, _L4, _L5, _L10, _L11); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L13"/>
+					</lefts>
+					<right>
+						<!-- All_Doors_true(_L3, _L4, _L5, _L10, _L11) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="3">
+									<operator>
+										<OperatorRef name="All_Doors_true"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L3"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L4"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L5"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L10"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L11"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/59bc/3D7E/5D70/65f796cb7861"/>
+					</pragmas>
+				</Equation>
+				<!-- _L14 = All_Doors_false(_L7, _L8, _L9, _L10, _L11); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L14"/>
+					</lefts>
+					<right>
+						<!-- All_Doors_false(_L7, _L8, _L9, _L10, _L11) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="2">
+									<operator>
+										<OperatorRef name="All_Doors_false"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L7"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L8"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L9"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L10"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L11"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/59c2/3D7E/5D70/65f797743e78"/>
+					</pragmas>
+				</Equation>
+				<!-- _L15 = All_Doors_true(_L7, _L8, _L9, _L6, _L11); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L15"/>
+					</lefts>
+					<right>
+						<!-- All_Doors_true(_L7, _L8, _L9, _L6, _L11) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="4">
+									<operator>
+										<OperatorRef name="All_Doors_true"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L7"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L8"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L9"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L6"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L11"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/59c8/3D7E/5D70/65f7982c2c09"/>
+					</pragmas>
+				</Equation>
+				<!-- _L17 = _L1 or _L13 or _L14 or _L15; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L17"/>
+					</lefts>
+					<right>
+						<!-- _L1 or _L13 or _L14 or _L15 -->
+						<NAryOp name="1" operator="or">
+							<operands>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L13"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L14"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L15"/>
+									</path>
+								</IdExpression>
+							</operands>
+						</NAryOp>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/59dc/3D7E/5D70/65f79b793bb3"/>
+					</pragmas>
+				</Equation>
+				<!-- anomaly_doors = _L17; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="anomaly_doors"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L17"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/59e9/3D7E/5D70/65f79bd57dda"/>
+					</pragmas>
+				</Equation>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/578b/7BDF/4264/65f779f0784c" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+					<comment>Module to verify the workings of the doors and generate and error sinal if need be.</comment>
+					<diagrams>
+						<NetDiagram name="Doors_Monitoring_1" landscape="true" format="A4 (210 297)" oid="!ed/578c/7BDF/4264/65f779f03dcf">
+							<presentationElements>
+								<EquationGE presentable="!ed/58d8/3D7E/5D70/65f7910243ba">
+									<position>
+										<Point x="11578" y="1545"/>
+									</position>
+									<size>
+										<Size width="1778" height="1397"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/58eb/3D7E/5D70/65f791df235a">
+									<position>
+										<Point x="5461" y="1080"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/58fb/3D7E/5D70/65f791e525ba">
+									<position>
+										<Point x="5461" y="2074"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/590b/3D7E/5D70/65f791eb7405">
+									<position>
+										<Point x="5461" y="3048"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/591b/3D7E/5D70/65f791ee197">
+									<position>
+										<Point x="5419" y="10181"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/5953/3D7E/5D70/65f7953e4b7">
+									<position>
+										<Point x="5419" y="6075"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/5968/3D7E/5D70/65f795677693">
+									<position>
+										<Point x="5376" y="6964"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/597d/3D7E/5D70/65f7958863aa">
+									<position>
+										<Point x="5673" y="7874"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/5992/3D7E/5D70/65f795cf6dca">
+									<position>
+										<Point x="5503" y="11240"/>
+									</position>
+									<size>
+										<Size width="254" height="508"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/58eb/3D7E/5D70/65f791df235a" dstEquation="!ed/58d8/3D7E/5D70/65f7910243ba">
+									<positions>
+										<Point x="5715" y="1349"/>
+										<Point x="8387" y="1349"/>
+										<Point x="8387" y="1773"/>
+										<Point x="11589" y="1773"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/58fb/3D7E/5D70/65f791e525ba" dstEquation="!ed/58d8/3D7E/5D70/65f7910243ba">
+									<positions>
+										<Point x="5715" y="2328"/>
+										<Point x="8387" y="2328"/>
+										<Point x="8387" y="2011"/>
+										<Point x="11589" y="2011"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/590b/3D7E/5D70/65f791eb7405" dstEquation="!ed/58d8/3D7E/5D70/65f7910243ba">
+									<positions>
+										<Point x="5715" y="3307"/>
+										<Point x="8520" y="3307"/>
+										<Point x="8520" y="2249"/>
+										<Point x="11589" y="2249"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/591b/3D7E/5D70/65f791ee197" dstEquation="!ed/58d8/3D7E/5D70/65f7910243ba">
+									<positions>
+										<Point x="5662" y="10451"/>
+										<Point x="8837" y="10451"/>
+										<Point x="8837" y="2461"/>
+										<Point x="11589" y="2461"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/59a5/3D7E/5D70/65f7962d171c">
+									<position>
+										<Point x="5567" y="12234"/>
+									</position>
+									<size>
+										<Size width="169" height="297"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="5" srcEquation="!ed/59a5/3D7E/5D70/65f7962d171c" dstEquation="!ed/58d8/3D7E/5D70/65f7910243ba">
+									<positions>
+										<Point x="5741" y="12383"/>
+										<Point x="9737" y="12383"/>
+										<Point x="9737" y="2699"/>
+										<Point x="11589" y="2699"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/59bc/3D7E/5D70/65f796cb7861">
+									<position>
+										<Point x="11621" y="4085"/>
+									</position>
+									<size>
+										<Size width="1778" height="1397"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/58eb/3D7E/5D70/65f791df235a" dstEquation="!ed/59bc/3D7E/5D70/65f796cb7861">
+									<positions>
+										<Point x="5715" y="1349"/>
+										<Point x="6985" y="1349"/>
+										<Point x="6985" y="4313"/>
+										<Point x="11615" y="4313"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/58fb/3D7E/5D70/65f791e525ba" dstEquation="!ed/59bc/3D7E/5D70/65f796cb7861">
+									<positions>
+										<Point x="5715" y="2328"/>
+										<Point x="7514" y="2328"/>
+										<Point x="7514" y="4551"/>
+										<Point x="11615" y="4551"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/590b/3D7E/5D70/65f791eb7405" dstEquation="!ed/59bc/3D7E/5D70/65f796cb7861">
+									<positions>
+										<Point x="5715" y="3307"/>
+										<Point x="8096" y="3307"/>
+										<Point x="8096" y="4789"/>
+										<Point x="11615" y="4789"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/5992/3D7E/5D70/65f795cf6dca" dstEquation="!ed/59bc/3D7E/5D70/65f796cb7861">
+									<positions>
+										<Point x="5768" y="11509"/>
+										<Point x="9287" y="11509"/>
+										<Point x="9287" y="5001"/>
+										<Point x="11615" y="5001"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="5" srcEquation="!ed/59a5/3D7E/5D70/65f7962d171c" dstEquation="!ed/59bc/3D7E/5D70/65f796cb7861">
+									<positions>
+										<Point x="5741" y="12383"/>
+										<Point x="10266" y="12383"/>
+										<Point x="10266" y="5239"/>
+										<Point x="11615" y="5239"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/59c2/3D7E/5D70/65f797743e78">
+									<position>
+										<Point x="11705" y="6096"/>
+									</position>
+									<size>
+										<Size width="1778" height="1397"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/5953/3D7E/5D70/65f7953e4b7" dstEquation="!ed/59c2/3D7E/5D70/65f797743e78">
+									<positions>
+										<Point x="5662" y="6350"/>
+										<Point x="8440" y="6350"/>
+										<Point x="8440" y="6324"/>
+										<Point x="11695" y="6324"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/5968/3D7E/5D70/65f795677693" dstEquation="!ed/59c2/3D7E/5D70/65f797743e78">
+									<positions>
+										<Point x="5636" y="7223"/>
+										<Point x="6562" y="7223"/>
+										<Point x="6562" y="6562"/>
+										<Point x="11695" y="6562"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/597d/3D7E/5D70/65f7958863aa" dstEquation="!ed/59c2/3D7E/5D70/65f797743e78">
+									<positions>
+										<Point x="5927" y="8149"/>
+										<Point x="6959" y="8149"/>
+										<Point x="6959" y="6800"/>
+										<Point x="11695" y="6800"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/5992/3D7E/5D70/65f795cf6dca" dstEquation="!ed/59c2/3D7E/5D70/65f797743e78">
+									<positions>
+										<Point x="5768" y="11509"/>
+										<Point x="10742" y="11509"/>
+										<Point x="10742" y="7011"/>
+										<Point x="11695" y="7011"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="5" srcEquation="!ed/59a5/3D7E/5D70/65f7962d171c" dstEquation="!ed/59c2/3D7E/5D70/65f797743e78">
+									<positions>
+										<Point x="5741" y="12383"/>
+										<Point x="11060" y="12383"/>
+										<Point x="11060" y="7250"/>
+										<Point x="11695" y="7250"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/59c8/3D7E/5D70/65f7982c2c09">
+									<position>
+										<Point x="11621" y="8700"/>
+									</position>
+									<size>
+										<Size width="1778" height="1397"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/5953/3D7E/5D70/65f7953e4b7" dstEquation="!ed/59c8/3D7E/5D70/65f7982c2c09">
+									<positions>
+										<Point x="5662" y="6350"/>
+										<Point x="7567" y="6350"/>
+										<Point x="7567" y="8943"/>
+										<Point x="11615" y="8943"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/5968/3D7E/5D70/65f795677693" dstEquation="!ed/59c8/3D7E/5D70/65f7982c2c09">
+									<positions>
+										<Point x="5636" y="7223"/>
+										<Point x="8096" y="7223"/>
+										<Point x="8096" y="9181"/>
+										<Point x="11615" y="9181"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/597d/3D7E/5D70/65f7958863aa" dstEquation="!ed/59c8/3D7E/5D70/65f7982c2c09">
+									<positions>
+										<Point x="5927" y="8149"/>
+										<Point x="8493" y="8149"/>
+										<Point x="8493" y="9419"/>
+										<Point x="11615" y="9419"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/591b/3D7E/5D70/65f791ee197" dstEquation="!ed/59c8/3D7E/5D70/65f7982c2c09">
+									<positions>
+										<Point x="5662" y="10451"/>
+										<Point x="7091" y="10451"/>
+										<Point x="7091" y="9631"/>
+										<Point x="11615" y="9631"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="5" srcEquation="!ed/59a5/3D7E/5D70/65f7962d171c" dstEquation="!ed/59c8/3D7E/5D70/65f7982c2c09">
+									<positions>
+										<Point x="5741" y="12383"/>
+										<Point x="7938" y="12383"/>
+										<Point x="7938" y="9869"/>
+										<Point x="11615" y="9869"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/59dc/3D7E/5D70/65f79b793bb3">
+									<position>
+										<Point x="18119" y="1418"/>
+									</position>
+									<size>
+										<Size width="1032" height="9202"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/58d8/3D7E/5D70/65f7910243ba" dstEquation="!ed/59dc/3D7E/5D70/65f79b793bb3">
+									<positions>
+										<Point x="13361" y="2249"/>
+										<Point x="15716" y="2249"/>
+										<Point x="15716" y="3254"/>
+										<Point x="18124" y="3254"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/59bc/3D7E/5D70/65f796cb7861" dstEquation="!ed/59dc/3D7E/5D70/65f79b793bb3">
+									<positions>
+										<Point x="13388" y="4789"/>
+										<Point x="15743" y="4789"/>
+										<Point x="15743" y="5106"/>
+										<Point x="18124" y="5106"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/59c2/3D7E/5D70/65f797743e78" dstEquation="!ed/59dc/3D7E/5D70/65f79b793bb3">
+									<positions>
+										<Point x="13494" y="6800"/>
+										<Point x="15796" y="6800"/>
+										<Point x="15796" y="6932"/>
+										<Point x="18124" y="6932"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/59c8/3D7E/5D70/65f7982c2c09" dstEquation="!ed/59dc/3D7E/5D70/65f79b793bb3">
+									<positions>
+										<Point x="13388" y="9419"/>
+										<Point x="15743" y="9419"/>
+										<Point x="15743" y="8758"/>
+										<Point x="18124" y="8758"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/59e9/3D7E/5D70/65f79bd57dda">
+									<position>
+										<Point x="21400" y="5800"/>
+									</position>
+									<size>
+										<Size width="338" height="508"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/59dc/3D7E/5D70/65f79b793bb3" dstEquation="!ed/59e9/3D7E/5D70/65f79bd57dda">
+									<positions>
+										<Point x="19156" y="6033"/>
+										<Point x="20294" y="6033"/>
+										<Point x="20294" y="6033"/>
+										<Point x="21458" y="6033"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

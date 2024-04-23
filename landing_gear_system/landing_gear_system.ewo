@@ -1,0 +1,114 @@
+
+[STUDIO\TOOLS\CONFIGURATIONS\Code Generator]
+
+"C:\\Users\\ensta\\SCADE\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\mathe\\Downloads\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="Simulation" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314(1)\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="Simulation" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314(2)\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="Coverage" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system.etp"="Simulation" 
+
+[STUDIO\TOOLS\CONFIGURATIONS\Metrics and Rules Checker]
+
+"C:\\Users\\ensta\\SCADE\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\mathe\\Downloads\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314(1)\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314(2)\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system.etp"="MetricRule" 
+
+[STUDIO\TOOLS\CONFIGURATIONS\Reporter]
+
+"C:\\Users\\ensta\\SCADE\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\mathe\\Downloads\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314(1)\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314(2)\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system.etp"="HTML" 
+
+[STUDIO\TOOLS\CONFIGURATIONS\Timing and Stack Analysis Tools]
+
+"C:\\Users\\ensta\\SCADE\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\mathe\\Downloads\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314(1)\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\mathe\\Downloads\\Projet ROB314(2)\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\Projet ROB314\\landing_gear_system\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+"C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system.etp"="KCG" 
+
+[STUDIO\Workspace]
+
+"ActiveProject"="C:\\Users\\ensta\\Desktop\\Projet ROB314\\landing_gear_system\\landing_gear_system.etp" 
+
+[SCADE\Editor\Shortcut]
+
+"groupNb"="0" 
+
+[SCADE\Editor\Tool]
+
+"UsePolyline"="true" 
+"TransitionKind"="weak" 
+
+[SCADE\Diff\Tool]
+
+"LastProject1"="" 
+"LastProject2"="" 
+"ModifiedOnly"="0" 
+
+[SCADE\Generator\Tool]
+
+"PragmaTarget"="C" 
+
+[SCADE\Simulator\Simulation]
+
+"Latency"="200" 
+"RefreshRate"="1" 
+
+[SCADE\Simulator\BinaryDisplay]
+
+"Count"="0" 
+
+[SCADE\Simulator\OctalDisplay]
+
+"Count"="0" 
+
+[SCADE\Simulator\HexadecimalDisplay]
+
+"Count"="0" 
+
+[SCADE\Simulator\Watch]
+
+"Count"="0" 
+"Watch1"="Voter3x1/in1/" 
+"Watch2"="Voter3x1/in2/" 
+"Watch3"="Voter3x1/in3/" 
+"Watch4"="Voter3x1/out/" 
+"Watch5"="Voter3x1/err/" 
+
+[SCADE\Simulator\Graph]
+
+"Count"="0" 
+"Graph1"="Voter3x1/in1/" 
+"Graph2"="Voter3x1/in2/" 
+"Graph3"="Voter3x1/in3/" 
+"Graph4"="Voter3x1/out/" 
+"Graph5"="Voter3x1/err/" 
+
+[SCADE\Simulator\ControlBreakpoint]
+
+"Count"="0" 
+
+[SCADE\Simulator\DataBreakpoint]
+
+"Count"="0" 
+
+[SCADE\Simulator\TclBreakpoint]
+
+"Count"="0" 

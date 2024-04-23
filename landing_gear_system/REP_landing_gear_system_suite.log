@@ -1,0 +1,38 @@
+ANSYS(R) SCADE LifeCycle(R) - Reporter for SCADE Suite - Version 2022 R1 (build 20211130T163409)
+(C) 2022 ANSYS, Inc. Unauthorized use, distribution, or duplication is prohibited.
+
+SCADE Suite project: C:/Users/ensta/Desktop/Projet ROB314/landing_gear_system/landing_gear_system/landing_gear_system.etp
+SCADE Suite configuration: Cert. Reporter
+
+Reporter Properties:
+- Authors: <authors>
+- Classification: <document classification>
+- CompanyInfo: <company>
+- CorporateLogo: 
+- Date: <date>
+- Description: <description>
+- diagDisplayType: Normal
+- DisplayCtx: 0
+- DisplayReqDescr: 1
+- DisplayVarCtx: 0
+- Distribution: <distribution list>
+- Footer: {} {<Corporate Info>} {}
+- Header: {$(ReferenceNr)
+$(CreatedDate)} {$(IssueNr)} {$(PageNumbering)}
+- Image: 
+- Index: <index>
+- IssueNr: <issue number>
+- LibrariesList: 
+- Reference: <reference>
+- ReferenceNr: <reference number>
+- ReportListOfFigures: 1
+- ReportListOfTables: 1
+- SCADEDisplayReport: Connection tables
+- SCADEDisplayReportConf: 
+- Subtitle: <subtitle>
+- Summary: <summary>
+- Title: <title>
+
+SCADE Suite report generated in: C:/Users/ensta/Desktop/Projet ROB314/landing_gear_system/landing_gear_system/landing_gear_system.rtf
+
+Program successfully ended - Check messages above for possible warnings.
